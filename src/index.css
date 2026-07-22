@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+:root {
+  font-family: "Open Sans", sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-*: initial;
+  --color-gray-100: #1f2523;
+  --color-gray-200: #4d5c57;
+  --color-gray-300: #cdd5d2;
+  --color-gray-400: #e4ece9;
+  --color-gray-500: #f9fbfa;
+
+  --color-white: #ffffff;
+
+  --color-green-100: #1f8459;
+  --color-green-200: #2cb178;
+
+  --text-2xs: 0.625rem;
+
+  --animate-overlayShow: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-contentShow: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
