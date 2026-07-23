@@ -2,6 +2,7 @@ import { FileIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import ButtonIcon from "./components/button-icon";
 import Button from "./components/button";
 import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogContent, ConfirmAlertDialogDescription, ConfirmAlertDialogOverlay, ConfirmAlertDialogPortal, ConfirmAlertDialogRoot, ConfirmAlertDialogTitle, ConfirmAlertDialogTrigger } from "./components/confirm-dialog";
+import FileInput from "./components/file-input";
 
 export default function App() {
  
@@ -48,6 +49,10 @@ export default function App() {
             </ConfirmAlertDialogContent>
           </ConfirmAlertDialogPortal>
         </ConfirmAlertDialogRoot>
+      </div>
+
+      <div className="space-y-3 flex flex-col w-full">
+        <FileInput labelText="Arquivo:" placeholder="Escolha o arquivo..."/>
       </div>
     </main>
   )
