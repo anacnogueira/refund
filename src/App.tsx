@@ -1,6 +1,7 @@
 import { FileIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import ButtonIcon from "./components/button-icon";
 import Button from "./components/button";
+import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogContent, ConfirmAlertDialogDescription, ConfirmAlertDialogOverlay, ConfirmAlertDialogPortal, ConfirmAlertDialogRoot, ConfirmAlertDialogTitle, ConfirmAlertDialogTrigger } from "./components/confirm-dialog";
 
 export default function App() {
  
@@ -16,6 +17,37 @@ export default function App() {
       <div className="space-y-3 flex flex-col w-full">
         <ButtonIcon icon={MagnifyingGlassIcon} />
         <ButtonIcon disabled icon={MagnifyingGlassIcon} />
+      </div>
+
+      <div className="space-y-3 flex flex-col w-full">
+        <ConfirmAlertDialogRoot>
+          <ConfirmAlertDialogTrigger>
+            <Button variant="primary">Abrir Modal</Button>
+          </ConfirmAlertDialogTrigger>
+          <ConfirmAlertDialogPortal>
+            <ConfirmAlertDialogOverlay />
+            <ConfirmAlertDialogContent className="flex flex-col gap-6">
+              <div className="flex flex-col gap-3">
+                <ConfirmAlertDialogTitle>
+                  Excluir Solicitação
+                </ConfirmAlertDialogTitle>
+                <ConfirmAlertDialogDescription>
+                  Tem certeza que deseja excluir esta solicitação? <br />
+                  Esta ação não pode ser desfeita.
+                </ConfirmAlertDialogDescription>
+              </div>
+
+              <div className="flex items-center w-full justify-end gap-4">
+                <ConfirmAlertDialogCancel className="w-fit">
+                  Cancelar
+                </ConfirmAlertDialogCancel>
+                <ConfirmAlertDialogAction className="w-fit">
+                   Excluir
+                </ConfirmAlertDialogAction>
+              </div>
+            </ConfirmAlertDialogContent>
+          </ConfirmAlertDialogPortal>
+        </ConfirmAlertDialogRoot>
       </div>
     </main>
   )
