@@ -4,6 +4,7 @@ import Button from "./components/button";
 import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogContent, ConfirmAlertDialogDescription, ConfirmAlertDialogOverlay, ConfirmAlertDialogPortal, ConfirmAlertDialogRoot, ConfirmAlertDialogTitle, ConfirmAlertDialogTrigger } from "./components/confirm-dialog";
 import FileInput from "./components/file-input";
 import Input from "./components/input";
+import NavLink from "./components/nav-link";
 
 export default function App() {
  
@@ -58,6 +59,10 @@ export default function App() {
 
        <div className="space-y-3 flex flex-col w-full">
         <Input labelText="Título" placeholder="Placeholder" />
+      </div>
+
+      <div className="space-y-3 flex flex-col w-full">
+         Links Aqui
       </div>
     </main>
   )
