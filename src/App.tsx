@@ -5,6 +5,7 @@ import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogC
 import FileInput from "./components/file-input";
 import Input from "./components/input";
 import NavLink from "./components/nav-link";
+import SelectInput from "./components/select-input";
 
 export default function App() {
  
@@ -63,6 +64,17 @@ export default function App() {
 
       <div className="space-y-3 flex flex-col w-full">
          Links Aqui
+      </div>
+
+      <div className="space-y-3 flex flex-col w-full">
+        <SelectInput 
+          name="category"
+          labelText="Categoria"
+          options={[
+            {label: "Alimentação", value: "food"},
+            {label: "Transporte", value: "transport"}
+          ]}
+        />
       </div>
     </main>
   )
