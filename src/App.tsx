@@ -4,7 +4,6 @@ import Button from "./components/button";
 import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogContent, ConfirmAlertDialogDescription, ConfirmAlertDialogOverlay, ConfirmAlertDialogPortal, ConfirmAlertDialogRoot, ConfirmAlertDialogTitle, ConfirmAlertDialogTrigger } from "./components/confirm-dialog";
 import FileInput from "./components/file-input";
 import Input from "./components/input";
-import NavLink from "./components/nav-link";
 import SelectInput from "./components/select-input";
 
 export default function App() {
