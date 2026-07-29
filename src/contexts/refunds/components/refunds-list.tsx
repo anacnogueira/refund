@@ -1,17 +1,10 @@
 import { Link } from "react-router";
 import Skeleton from "../../../components/skeleton";
 import { categoryIcons } from "../helpers";
+import useRefunds from "../hooks/use-refunds";
 
 export default function RefundsList() {
-    const refunds = { data: [
-        {
-           id: 'abc001',
-            title: 'Reembolso de alimentação',
-            category: "food",
-            value: 10,
-        }
-    ]};
-    const isLoadingRefunds = false;
+    const { refunds, isLoadingRefunds } = useRefunds();
 
     return (
         <div className="flex flex-col gap-4">
