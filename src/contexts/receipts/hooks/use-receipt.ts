@@ -8,6 +8,7 @@ export default function useReceipt() {
     async function createReceipt(payload: ReceiptNewFormSchema) {
         try {
             const formData = new FormData();
+            console.log(payload);
             formData.append("receiptFile", payload.receiptFile);
 
             const receipt = await api.post<ReceiptCreate>("/receipts", formData);

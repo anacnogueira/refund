@@ -3,8 +3,6 @@ import React, { type ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface FileInputProps extends ComponentProps<"input"> {
-    className?: string;
-    placeholder?: string;
     labelText?: string;
     error?: string;
 }

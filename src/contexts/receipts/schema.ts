@@ -3,10 +3,10 @@ import { z } from "zod";
 const MAX_LIMIT_FILE_SIZE_IN_BYTES = 2 * 1024 * 1024; //2MB
 
 const ACCEPTED_FILE_TYPES = [
-    "image/jpeg",
-    "image/jpg",
-    "image/png",
-    "application/png",
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "application/pdf",
 ];
 
 export const receiptNewFormSchema = z.object({
