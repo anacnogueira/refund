@@ -8,20 +8,21 @@ import { categoryOptions } from "../contexts/refunds/helpers";
 import Button from "../components/button";
 import { FileIcon } from "@phosphor-icons/react";
 import { ConfirmAlertDialogAction, ConfirmAlertDialogCancel, ConfirmAlertDialogContent, ConfirmAlertDialogDescription, ConfirmAlertDialogOverlay, ConfirmAlertDialogPortal, ConfirmAlertDialogRoot, ConfirmAlertDialogTitle, ConfirmAlertDialogTrigger } from "../components/confirm-dialog";
+import useRefund from "../contexts/refunds/hooks/use-refund";
+import { useRefundReceipt } from "../contexts/refunds/hooks/use-refund-receipt";
 
 export default function PageRefundDetails() {
     const { id } = useParams();
-    const refund = {
-        id: 'abc001',
-        title: 'Reembolso de alimentação',
-        category: 'food',
-        value: 5.0,
-    };
-    const isLoading = false;
-    const isDeleting = false;
-    const isLoadingReceipt = false;
+    const { refund, isLoading, isDeleting } = useRefund(id);
+    const { fetchRefundReceipt, isLoading: isLoadingReceipt} = useRefundReceipt();
+    
 
-    function handleOpenReceipt() {}
+    async function handleOpenReceipt() {
+        if(refund?.receipt.id) {
+            const { url } = await fetchRefundReceipt(refund.receipt.id);
+            window.open(`${import.meta.env.VITE_API_URL}${url}`, "_blank");
+        }
+    }
 
     return (
         <div className="rounded-2xl bg-gray-500 max-w-lg mx-auto p-10 flex flex-col gap-10">
@@ -107,12 +108,21 @@ export default function PageRefundDetails() {
 function ConfirmFileDeletionDialog() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const { refund, isLoading, deleteRefund, isDeleting } = useRefund(id);
+
+    async function handleDelete() {
+        if (refund) {
+            await deleteRefund(refund.id);
+            navigate("/");
+        }
+    }
+        
 
     return (
         <ConfirmAlertDialogRoot>
             <ConfirmAlertDialogTrigger asChild>
-                <Button variant="primary">
-                    Excluir
+                <Button disabled={isLoading || isDeleting} variant="primary">
+                    { isDeleting ? "Excluindo..." : "Excluir" }
                 </Button>
             </ConfirmAlertDialogTrigger>
 
@@ -132,7 +142,7 @@ function ConfirmFileDeletionDialog() {
                         <ConfirmAlertDialogCancel className="w-fit">
                             Cancelar
                         </ConfirmAlertDialogCancel>
-                        <ConfirmAlertDialogAction className="w-fit">
+                        <ConfirmAlertDialogAction onClick={handleDelete} className="w-fit">
                             Confirmar
                         </ConfirmAlertDialogAction>
                     </div>

@@ -3,7 +3,6 @@ import ButtonIcon from "./button-icon";
 import Skeleton from "./skeleton";
 import useRefunds from "../contexts/refunds/hooks/use-refunds";
 
-/* TO DO: Implementar Hooks */
 export function Pagination () {
     const { refunds, filters, isLoadingRefunds } = useRefunds();
 
