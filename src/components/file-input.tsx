@@ -18,6 +18,10 @@ export default function FileInput({
 }: FileInputProps){
     const [isEmpty, setIsEmpty] = React.useState(true);
 
+    function checkIsEmpty(event: React.ChangeEvent<HTMLInputElement>) {
+        setIsEmpty(event.target.files?.length === 0);
+    }
+
     return (
         <label
             className={twMerge(
@@ -31,6 +35,7 @@ export default function FileInput({
                 <input 
                     type="file"
                     className="file:hidden text-sm text-gray-200 peer"
+                    onChange={checkIsEmpty}
                     {...props}
                 />
 
