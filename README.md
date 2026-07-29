@@ -37,7 +37,7 @@ Esta aplicação foi desenvolvida em React + TypeScript com Vite e tem como obje
 1. Clone o repositório:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/anacnogueira/refund.git
 cd refund
 ```
 
