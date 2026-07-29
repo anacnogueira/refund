@@ -4,7 +4,7 @@ import { tv } from "tailwind-variants";
 
 const inputLabelVariants = tv({
     base: `
-        realtive text-gray-200 focus-within:text-green-100 
+        relative text-gray-200 focus-within:text-green-100 
         focus-within:font-bold text-2xs transition-all uppercase 
         flex flex-col gap-2
     `
