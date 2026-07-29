@@ -2,8 +2,13 @@ import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import ButtonIcon from "./button-icon";
 import Skeleton from "./skeleton";
 
+/* TO DO: Implementar Hooks */
 export function Pagination () {
     const isLoadingRefunds = false;
+    const refunds = [];
+
+    if (!refunds) return null;
+
     return (
         <div className="flex items-center self-center gap-2.5">
             <ButtonIcon 

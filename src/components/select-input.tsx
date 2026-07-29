@@ -5,7 +5,6 @@ type Option = {
     value: string;
     label: string;
 }
-
 interface SelectInputProps extends Select.SelectProps {
     labelText?: string;
     options: Option[];
