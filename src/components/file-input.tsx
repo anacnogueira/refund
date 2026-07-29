@@ -1,5 +1,5 @@
 import { CloudArrowUpIcon } from "@phosphor-icons/react";
-import React from "react";
+import React, { type ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface FileInputProps extends ComponentProps<"input"> {
